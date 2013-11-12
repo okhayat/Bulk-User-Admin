@@ -1,16 +1,10 @@
-<?php
-
-$domains = $vars['domains'];
-
-?>
+<?php $domains = $vars['domains'] ?>
 <table class="bulk_user_admin_email_domains">
 	<tr>
-		<th>Domain</th>
-		<th>Registered users</th>
+		<th><?php echo elgg_echo('bulk_user_admin:domain') ?></th>
+		<th><?php echo elgg_echo('bulk_user_admin:registered_users') ?></th>
 	</tr>
 <?php
-
-
 $i = 0;
 foreach ($domains as $domain_info) {
 	if (!$domain_info->domain) {
@@ -19,7 +13,8 @@ foreach ($domains as $domain_info) {
 
 	$domain = elgg_view('output/url', array(
 		'text' => $domain_info->domain,
-		'href' => $domain_info->domain
+		'href' => $domain_info->domain,
+		'target' => '_blank',
 	));
 
 	$url = elgg_http_add_url_query_elements($vars['url'] . 'admin/user', array('domain' => $domain_info->domain));

@@ -10,7 +10,7 @@ table.bulk_user_admin_email_domains th {
 }
 
 table.bulk_user_admin_email_domains td {
-	padding: 3px;
+	padding: 5px;
 }
 
 table.bulk_user_admin_email_domains td.center {
@@ -23,4 +23,12 @@ table.bulk_user_admin_email_domains tr.odd {
 
 table.bulk_user_admin_email_domains tr.even {
 	background-color: #dedede;
+}
+
+table.bulk_user_admin_users {
+
+}
+
+table.bulk_user_admin_users tr {
+
 }

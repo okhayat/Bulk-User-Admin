@@ -6,14 +6,14 @@
  */
 
 // Are we performing a search
-$limit = get_input('limit', 10);
+$limit = get_input('limit', 35);
 $offset = get_input('offset', 0);
 $domain = get_input('domain');
 
 $context = elgg_get_context();
 
 if (!$domain) {
-	$title = elgg_echo('admin:user');
+	$title = elgg_echo('admin:users');
 } else {
 	$title = "Users in the domain $domain";
 }
@@ -44,7 +44,7 @@ $pagination = elgg_view('navigation/pagination', array(
 ));
 
 $form_body = <<<HTML
-<table width="100%" border="1" cellpadding="3" cellspacing="0">
+<table width="100%" border="1" cellpadding="3" cellspacing="0" class="bulk_user_admin_users">
 	<tr>
 		<th><input type="checkbox" class="check-all" /></th>
 		<th>Icon</th>
@@ -105,7 +105,7 @@ if ($domain) {
 	$summary .= '<br />';
 	$summary .= elgg_view('output/url', array(
 		'href' => elgg_http_remove_url_query_element(current_page_url(), 'domain'),
-		'text' => 'All users'
+		'text' => elgg_echo('bulk_user_admin:all_users')
 	));
 }
 
